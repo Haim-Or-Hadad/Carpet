@@ -1,5 +1,6 @@
 #include<iostream>
 
+#include<vector>
 using namespace std;
 #include "mat.hpp"
 using namespace ariel;
@@ -21,12 +22,14 @@ namespace ariel{
            throw runtime_error("wrong char");
        }
         //memory allocation to the char matrix
-        char **matrix = NULL;
-        matrix = new char*[height];
-        for (int i = 0; i < height; i++)
-        {
-            matrix[i] = new char[width];
-        }
+        std::vector<std::vector<char>>matrix;
+        // char **matrix = NULL;
+        // matrix = new char*[height];
+        // for (int i = 0; i < height; i++)
+        // {
+        //     matrix[i] = new char[width];
+        // }
+        matrix.resize(height,std::vector<char>(width));
         char current_char = ch1;
         int row=0;
         int col=0;
@@ -62,7 +65,7 @@ namespace ariel{
             //change the symbol for the next iteration
             current_char == ch1 ? current_char = ch2 : current_char = ch1; 
         }
-        string carpet = "";
+        string carpet = " ";
         for (int i = 0; i < real_row; i++)
         {
             for (int j = 0; j < real_col; j++)
@@ -71,16 +74,19 @@ namespace ariel{
             }
             carpet +="\n";
         }
-      //free alocated memory
-        for (int i = 0; i < real_row; i++)
-        {
-            delete[] matrix[i]; //delete all the lines of array
-        }
-        delete[] matrix; //delete the array
-        return carpet;          
-    }
-    
+        return carpet;
+   }
 }
+      //free alocated memory
+    //     for (int i = 0; i < real_row; i++)
+    //     {
+    //         delete[] matrix[i]; //delete all the lines of array
+    //     }
+    //     delete[] matrix; //delete the array
+     //     return carpet;          
+    // }
+    
+// }
 // int main(){
 //     cout <<  ariel::mat(9, 7, '@', '-') << endl; 
 // }
