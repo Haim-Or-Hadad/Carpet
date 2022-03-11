@@ -32,7 +32,7 @@ string nospaces(string input) {
 
 TEST_CASE("Good input") {
     SUBCASE("short input"){
-	    CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n @-------@\n@-@@@@@-@\n@-@---@-@\n@-@@@@@-@\n@-------@\n@@@@@@@@@"));
+	    CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n@-------@\n@-@@@@@-@\n@-@---@-@\n@-@@@@@-@\n@-------@\n@@@@@@@@@"));
         CHECK(nospaces(mat(3,1,'=','^')) == nospaces("==="));
         CHECK(nospaces(mat(5,3,'$','&')) == nospaces("$$$$$\n$&&&$\n$$$$$\n"));
         CHECK(nospaces(mat(7,5,'%','*')) == nospaces("%%%%%%%\n%*****%\n%*%%%*%\n%*****%\n%%%%%%%"));
