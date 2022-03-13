@@ -21,14 +21,8 @@ namespace ariel{
        if (ch1 < minimum_char || ch1 > maximum_char || ch2 < minimum_char || ch2 > maximum_char){
            throw runtime_error("wrong char");
        }
-        //memory allocation to the char matrix
+        //declaration of matrix with vector
         std::vector<std::vector<char>>matrix;
-        // char **matrix = NULL;
-        // matrix = new char*[height];
-        // for (int i = 0; i < height; i++)
-        // {
-        //     matrix[i] = new char[width];
-        // }
         matrix.resize(height,std::vector<char>(width));
         char current_char = ch1;
         int row=0;
