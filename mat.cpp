@@ -17,7 +17,7 @@ namespace ariel{
        if (height < 0 || width < 0 ){
            throw runtime_error("cannot produce the mat because col and row must be positive");
        }
-
+        // check the character are valid 
        if (ch1 < minimum_char || ch1 > maximum_char || ch2 < minimum_char || ch2 > maximum_char){
            throw runtime_error("wrong char");
        }
@@ -31,7 +31,7 @@ namespace ariel{
         int const real_col = width;
         
         /*any iteration the loop draw one frame of the carpet,
-        after row arrive to real_row and col arrive to real_col the carpet is ready*/
+        after row arrive to real_row and col arrive to real_col the carpet is ready.*/
         while (row <= width && col <= height)
         {
             //fill the top row of rectangle
