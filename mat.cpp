@@ -59,7 +59,7 @@ namespace ariel{
             //change the symbol for the next iteration
             current_char == ch1 ? current_char = ch2 : current_char = ch1; 
         }
-        string carpet = " ";
+        string carpet;
         for (int i = 0; i < real_row; i++)
         {
             for (int j = 0; j < real_col; j++)
@@ -71,16 +71,3 @@ namespace ariel{
         return carpet;
    }
 }
-      //free alocated memory
-    //     for (int i = 0; i < real_row; i++)
-    //     {
-    //         delete[] matrix[i]; //delete all the lines of array
-    //     }
-    //     delete[] matrix; //delete the array
-     //     return carpet;          
-    // }
-    
-// }
-// int main(){
-//     cout <<  ariel::mat(9, 7, '@', '-') << endl; 
-// }
