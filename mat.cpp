@@ -29,7 +29,9 @@ namespace ariel{
         int col=0;
         int const real_row = height;
         int const real_col = width;
-
+        
+        /*any iteration the loop draw one frame of the carpet,
+        after row arrive to real_row and col arrive to real_col the carpet is ready*/
         while (row <= width && col <= height)
         {
             //fill the top row of rectangle
@@ -43,17 +45,13 @@ namespace ariel{
             width--;
             
             //fill the bottom row of rectangle
-            if (row <= height){
                 for (int i = width; i >= col; i--){
                     matrix[height-1][i] = current_char;}
-            }
             height--;
 
             //fill the left colum of rectangle
-            if (col <= width){
                 for (int i = height; i >= row; i--){
                     matrix[i][col] = current_char;}
-            }
             col++; 
 
             //change the symbol for the next iteration
@@ -71,3 +69,4 @@ namespace ariel{
         return carpet;
    }
 }
+
