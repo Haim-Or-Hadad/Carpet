@@ -43,15 +43,20 @@ namespace ariel{
             for (int i = row ; i < height; i++){
                 matrix[i][width-1] = current_char;}
             width--;
-            
+
+            // the if statement is to avoid from fill same line twice or more times
             //fill the bottom row of rectangle
-                for (int i = width; i >= col; i--){
+            if (row < height){
+                for (int i = col; i < width; i++){
                     matrix[height-1][i] = current_char;}
+            }
             height--;
 
             //fill the left colum of rectangle
-                for (int i = height; i >= row; i--){
+            if (row < height){
+                for (int i = row; i < height; i++){
                     matrix[i][col] = current_char;}
+            }
             col++; 
 
             //change the symbol for the next iteration
